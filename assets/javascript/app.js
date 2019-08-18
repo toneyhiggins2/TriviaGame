@@ -11,36 +11,36 @@ var questOptions = [
         "correctAnswer": "answer1"
     }, {
         "question": "Who founded Bad Boy Records?",
-        "answers": ["United States", "France", "Germany", "Brazil"],
+        "answers": ["Biggie", "Sean Combs", "Dr Dre", "Sean Carter"],
         "correctAnswer": "answer2"
     }, {
         "question": "Name a member of Mobb Deep",
-        "answers": ["Brady Bunch", "Two and A Half Men", "Sopranos", "The Big Bang Theory"],
-        "correctAnswer": "answer4"
+        "answers": ["Prodigy", "Eminem", "Tupac", "Earl Jones"],
+        "correctAnswer": "answer1"
     }, {
         "question": "Q-Tip, Phife Dawg & Ali Shaheed Muhammad founded which group?",
-        "answers": ["Green Bay Packers", "Denver Broncos", "Carolina Panthers", "New England Patriots"],
-        "correctAnswer": "answer-"
+        "answers": ["Black Eye Peas", "Nsync", "Boys 2 Men", "A Tribe Called Quest"],
+        "correctAnswer": "answer4"
     }, {
         "question": 'What was Christopher Wallaces stage name?',
-        "answers": ["Dale Earnhardt", "Michael Schumacher", "Colin McRae", "Darrell Waltrip"],
+        "answers": ["Biggie", "Smalls", "Notorius BIG", "Chris"],
         "correctAnswer": "answer3"
     }, {
         "question": "What is Jay-Z's real name?",
-        "answers": ["One", "Two", "Five", "Seven"],
-        "correctAnswer": "answer2"
-    }, {
-        "question": "What NY borough did the Wu-Tang Clan refer to as 'Shaolin'?",
-        "answers": ["42", "80", "200", "153"],
-        "correctAnswer": "answer3"
-    }, {
-        "question": "WThis artist starred in the films 'Above The Rim' and 'Juice'",
-        "answers": ["Shel Silverstein", "Johnny Cash", "Elvis Pressley", "Elton John"],
+        "answers": ["Shawn Carter", "Big Sean", "Sean Alexander", "Shawn Combs"],
         "correctAnswer": "answer1"
     }, {
+        "question": "What NY borough did the Wu-Tang Clan refer to as 'Shaolin'?",
+        "answers": ["Brooklyn", "Staten Island", "Flat Bush", "Queens"],
+        "correctAnswer": "answer2"
+    }, {
+        "question": "This artist starred in the films 'Above The Rim' and 'Juice'",
+        "answers": ["Denzel Washington", "Duane Martin", "Tupac Shakur", "Will Smith"],
+        "correctAnswer": "answer3"
+    }, {
         "question": "Will Smith starred in what TV show?",
-        "answers": ["Thomas Jefferson", "Theodore Roosevelt", "George Washington", "Franklin Roosevelt"],
-        "correctAnswer": "answer4"
+        "answers": ["Fresh Prince of Bel-Air", "My Wife and Kids", "Tales", "All American"],
+        "correctAnswer": "answer1"
     }
 ];
 
