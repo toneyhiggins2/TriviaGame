@@ -58,7 +58,7 @@ function newTimer(counter) {
         if (counter <= 0) {
             clearInterval(nextQuestionTimer);
             // check to see if there are any remaining questions
-            var questionsLeft = questionOptions.length
+            var questionsLeft = questOptions.length
             if (questionsLeft === 0) {
                 $("#timer").html("<h3>No questions remain.</h3>")
                 //endOfGamePopup();
@@ -66,7 +66,7 @@ function newTimer(counter) {
                 $("#timer").html("<h3>Next Question!</h3>");
                 timerExpired = true;
                 timerRunning = false;
-                currentQuestionAnswer = selectQuestion(questionOptions); //once timer expires call next question.
+                currentQuestionAnswer = selectQuestion(questOptions); //once timer expires call next question.
             }
         } else if (null === selectedAnswer && counter > 3) {
             $("#timer").html("<h3>Time is up!</h3>");

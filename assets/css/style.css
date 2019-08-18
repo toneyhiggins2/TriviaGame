@@ -1,7 +1,51 @@
 body {
-background-color: black;
+background-image: url(https://www.gladsbuy.com/media/catalog/product/cache/1/image/1200x1200/cd183fc3b28bbe2685bb0b4f2a628e4d/H/X/HXB-169_10X10.jpg);
 }
 
-.container {
-    background-color: crimson;
-}
+.container{
+    background-color: palegreen;
+    height: 600px;
+    width: 960px;
+    border: 2px solid #ffffff;
+    position: relative;
+  }
+
+  #triviaQuestion{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(94, 94, 94, 0.5);
+    height: 150px;
+    width: 100%;
+    color: #000000;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+  
+  }
+
+header{
+    height: 50px;
+    width: 100vw;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 40px;
+    background-color: palegreen;
+    border-bottom: 2px solid #ffffff;
+    text-align: center;
+    color: #000000;
+  }
+
+  .answers{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 5rem;
+    width: 9rem;
+    border: 2px solid #ffffff;
+    background-color: coral;
+    color: #000000;
+  
+  }
