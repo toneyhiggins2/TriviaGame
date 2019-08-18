@@ -1,55 +1,51 @@
-function triviaQuestions() {
-    var questOptions = [
-        // array to hold all of the questions
-        {
-            "question": "What is the name of Nas' debut album?",
-            "answers": ["The Lost Tapes", "NASIR", "Illmatic", "I Am"],
-            "correctAnswer": "answer3",
-        }, {
-            "question": "What label did Dr. Dre, Snoop Dogg and Tupac Shakur all belong to?",
-            "answers": ["Death Row", "Bad Boy", "Atlantic", "Motown"],
-            "correctAnswer": "answer1"
-        }, {
-            "question": "Who founded Bad Boy Records?",
-            "answers": ["United States", "France", "Germany", "Brazil"],
-            "correctAnswer": "answer-2"
-        }, {
-            "question": "Name a member of Mobb Deep",
-            "answers": ["Brady Bunch", "Two and A Half Men", "Sopranos", "The Big Bang Theory"],
-            "correctAnswer": "answer-4"
-        }, {
-            "question": "Q-Tip, Phife Dawg & Ali Shaheed Muhammad founded which group?",
-            "answers": ["Green Bay Packers", "Denver Broncos", "Carolina Panthers", "New England Patriots"],
-            "correctAnswer": "answer-1"
-        }, {
-            "question": 'What was Christopher Wallaces stage name?',
-            "answers": ["Dale Earnhardt", "Michael Schumacher", "Colin McRae", "Darrell Waltrip"],
-            "correctAnswer": "answer-3"
-        }, {
-            "question": "What is Jay-Z's real name?",
-            "answers": ["One", "Two", "Five", "Seven"],
-            "correctAnswer": "answer-2"
-        }, {
-            "question": "What NY borough did the Wu-Tang Clan refer to as 'Shaolin'?",
-            "answers": ["42", "80", "200", "153"],
-            "correctAnswer": "answer-3"
-        }, {
-            "question": "WThis artist starred in the films 'Above The Rim' and 'Juice'",
-            "answers": ["Shel Silverstein", "Johnny Cash", "Elvis Pressley", "Elton John"],
-            "correctAnswer": "answer-1"
-        }, {
-            "question": "Will Smith starred in what TV show?",
-            "answers": ["Thomas Jefferson", "Theodore Roosevelt", "George Washington", "Franklin Roosevelt"],
-            "correctAnswer": "answer-4"
-        }
-    ];
-    // load variables
-    amountCorrect = 0;
 
-    return questOptions;
-}
+var questOptions = [
+    // array to hold all of the questions
+    {
+        "question": "What is the name of Nas' debut album?",
+        "answers": ["The Lost Tapes", "NASIR", "Illmatic", "I Am"],
+        "correctAnswer": "answer3",
+    }, {
+        "question": "What label did Dr. Dre, Snoop Dogg and Tupac Shakur all belong to?",
+        "answers": ["Death Row", "Bad Boy", "Atlantic", "Motown"],
+        "correctAnswer": "answer1"
+    }, {
+        "question": "Who founded Bad Boy Records?",
+        "answers": ["United States", "France", "Germany", "Brazil"],
+        "correctAnswer": "answer2"
+    }, {
+        "question": "Name a member of Mobb Deep",
+        "answers": ["Brady Bunch", "Two and A Half Men", "Sopranos", "The Big Bang Theory"],
+        "correctAnswer": "answer4"
+    }, {
+        "question": "Q-Tip, Phife Dawg & Ali Shaheed Muhammad founded which group?",
+        "answers": ["Green Bay Packers", "Denver Broncos", "Carolina Panthers", "New England Patriots"],
+        "correctAnswer": "answer-"
+    }, {
+        "question": 'What was Christopher Wallaces stage name?',
+        "answers": ["Dale Earnhardt", "Michael Schumacher", "Colin McRae", "Darrell Waltrip"],
+        "correctAnswer": "answer3"
+    }, {
+        "question": "What is Jay-Z's real name?",
+        "answers": ["One", "Two", "Five", "Seven"],
+        "correctAnswer": "answer2"
+    }, {
+        "question": "What NY borough did the Wu-Tang Clan refer to as 'Shaolin'?",
+        "answers": ["42", "80", "200", "153"],
+        "correctAnswer": "answer3"
+    }, {
+        "question": "WThis artist starred in the films 'Above The Rim' and 'Juice'",
+        "answers": ["Shel Silverstein", "Johnny Cash", "Elvis Pressley", "Elton John"],
+        "correctAnswer": "answer1"
+    }, {
+        "question": "Will Smith starred in what TV show?",
+        "answers": ["Thomas Jefferson", "Theodore Roosevelt", "George Washington", "Franklin Roosevelt"],
+        "correctAnswer": "answer4"
+    }
+];
 
 function newTimer(counter) {
+
 
     var timerRunning = true;
     var nextQuestionTimer = setInterval(function () {
@@ -57,11 +53,12 @@ function newTimer(counter) {
         counter--;
         if (counter <= 0) {
             clearInterval(nextQuestionTimer);
-            // check to see if there are any remaining questions
-            var questionsLeft = questOptions.length
+
+            var questionsLeft = questOptions.length;
             if (questionsLeft === 0) {
                 $("#timer").html("<h3>No questions remain.</h3>")
-                //endOfGamePopup();
+                endofGame();
+
             } else {
                 $("#timer").html("<h3>Next Question!</h3>");
                 timerExpired = true;
@@ -80,15 +77,15 @@ function newTimer(counter) {
     }, 1000);
 }
 
-function selectQuestion(array) {
-    // this function selects a question from the bank of questions
 
-    // sets the games basic conditions.
+
+function selectQuestion(array) {
+
     timeUp = false;
     userSelected = false;
 
-    // indexNumber = 0; //maybe make random, but for testing will be static
-    indexNumber = Math.floor(Math.random() * array.length); // this will select a random question.
+
+    indexNumber = Math.floor(Math.random() * array.length);
 
     question = array[indexNumber];
     if (question) {
@@ -100,8 +97,8 @@ function selectQuestion(array) {
 
     }
 
-    // set timer for question
-    counter = 30;
+
+    counter = 5;
     var timerRunning = true;
     $("#timer").html("<h3>Time Remaining: " + counter + "</h3>");
     timerCountdown = setInterval(function () {
@@ -123,14 +120,48 @@ function selectQuestion(array) {
 
 }
 
+function endofGame() {
+
+    $("#userScore").text("Score: " + ((answeredCorrect / total) * 100));
+    $("#correct").text("Correct Answers: " + answeredCorrect);
+    $("#incorrect").text("Incorrect Answers: " + (total - answeredCorrect));
+}
+
 $(document).ready(function () {
 
-    gameQuestions = triviaQuestions();
+    gameQuestions = questOptions;
 
-    // once the page is loaded a question is selected.
-    currentQuestionAnswer = selectQuestion(gameQuestions);
+    total = questOptions.length;
+
+    currentQuestionAnswer = selectQuestion(questOptions);
     timerRunning = true;
 
-    
+    $(".answers").on("click", function () {
+
+        if (timeUp === true) {
+            alert("Time is up, cannot select an answer.")
+        } else {
+            selectedAnswer = this.id;
+            selectedAnswerID = "#" + selectedAnswer;
+            answerSelected = true;
+            clearInterval(timerCountdown);
+        }// stop the countdown timer
+
+        if (currentQuestionAnswer === selectedAnswer) {
+            // if the user selects the correct answer do the following
+            $(selectedAnswerID).addClass("correct-answer");
+            // add timer for 3 seconds
+            answeredCorrect = answeredCorrect + 1;
+
+        } else {
+            // if the user is incorrect do the following.
+            correctAnswerId = "#" + currentQuestionAnswer;
+            $(correctAnswerId).addClass("correct-answer");
+            $(selectedAnswerID).addClass("incorrect-answer");
+        }
+        // regardless of whether the answer is right or wrong, prep for next question
+        newTimer(5); // new question will be selected here. 
 
     })
+
+}) 
