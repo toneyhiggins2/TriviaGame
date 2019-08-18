@@ -98,7 +98,7 @@ function selectQuestion(array) {
     }
 
 
-    counter = 5;
+    counter = 30;
     var timerRunning = true;
     $("#timer").html("<h3>Time Remaining: " + counter + "</h3>");
     timerCountdown = setInterval(function () {
